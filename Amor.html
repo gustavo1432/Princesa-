@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parabéns minha Princesa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f1a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #1c1c2b;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      max-width: 400px;
+      width: 90%;
+      padding: 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* mantém proporção sem esticar */
+      border-radius: 15px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    .countdown {
+      background: #2b2b3d;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 15px 0;
+      font-size: 14px;
+      color: #ff82b2;
+    }
+
+    .message {
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    .message span {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="carousel" id="carousel">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_121713.jpg" class="active" alt="Foto 1">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171350.jpg" alt="Foto 2">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171407.jpg" alt="Foto 3">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171529.jpg" alt="Foto 4">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171902.png" alt="Foto 5">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171914.png" alt="Foto 6">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/525362340_1516710352832761_7353236145171460550_n.png" alt="Foto 7">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/IMG-20250820-WA0000.jpg" alt="Foto 8">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/IMG-20250820-WA0002.jpg" alt="Foto 9">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/PSX_20250805_121814.jpg" alt="Foto 10">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250729_102344_Chrome~3.jpg" alt="Foto 11">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250731_012511_Instagram.jpg" alt="Foto 12">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250805_150949_Instagram.jpg" alt="Foto 13">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250805_150955_Instagram.jpg" alt="Foto 14">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250927_010556_Instagram.jpg" alt="Foto 15">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250927_185932_Instagram.jpg" alt="Foto 16">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250929_230138_Instagram.jpg" alt="Foto 17">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250929_170855_One%20UI%20Home.jpg" alt="Foto 18">
+    </div>
+
+    <h1>Parabéns minha Princesa</h1>
+
+    <div class="countdown" id="countdown">
+      Carregando tempo...
+    </div>
+
+    <div class="message">
+      🎉👑 Está chegando o seu aniversário, minha Princesa! 💖  
+      <span>Me desculpa por não estar aí com você 😔, mas você sabe o quanto eu queria estar ao seu lado, meu Amor. ❤️</span>  
+      <span>Eu te amo tanto e desejo que o seu dia seja perfeito e cheio de alegria 🥳🥰</span>  
+      🎁 Eu queria te dar um presente lindo, mas como você disse que não quer, este ano não vou mandar nada... 😘💌  
+      <span>Mas no próximo ano te espera uma surpresa especial 🌹💎</span>  
+      <span>Bjs, minha Princesa 💕 meu Amorzinho 😍💋</span>
+    </div>
+  </div>
+
+  <script>
+    // Carrossel automático
+    const images = document.querySelectorAll("#carousel img");
+    let current = 0;
+
+    function showNextImage() {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }
+
+    setInterval(showNextImage, 3000); // troca a cada 3s
+
+    // Contagem regressiva
+    const targetDate = new Date("December 10, 2025 00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("countdown").innerHTML = "🎂 Feliz aniversário, Princesa! 🎉";
+        return;
+      }
+
+      const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+      const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
