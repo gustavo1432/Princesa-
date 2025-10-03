@@ -1,151 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parabéns minha Princesa</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f1a;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parabéns minha Princesa</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 
-    .card {
-      background: #1c1c2b;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      max-width: 500px;
-      width: 100%;
-      padding: 20px;
-      text-align: center;
-    }
+  .card {
+    background: #1c1c2b;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    max-width: 500px;
+    width: 95%;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+  }
 
-    .carousel {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      border-radius: 15px;
-      overflow: hidden;
-      margin-bottom: 15px;
-    }
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .carousel img {
-  width: 100%;
-  height: 100%;
-   object-fit: cover;  /* ainda preenche sem deformar */
-  object-position: top; /* mostra mais do topo da foto */
-  border-radius: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
+  .carousel .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px) brightness(0.6);
+    transform: scale(1.1);
+    z-index: 1;
+  }
 
+  .carousel .main {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    z-index: 2;
+  }
 
-    .carousel img.active {
-      opacity: 1;
-    }
+  .carousel img {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+  }
 
-    h1 {
-      font-size: 22px;
-      margin: 10px 0;
-    }
+  .carousel img.active {
+    opacity: 1;
+  }
 
-    .countdown {
-      background: #2b2b3d;
-      padding: 10px;
-      border-radius: 10px;
-      margin: 15px 0;
-      font-size: 14px;
-      color: #ff82b2;
-    }
+  h1 {
+    font-size: 22px;
+    margin: 10px 0;
+  }
 
-    .message {
-      font-size: 14px;
-      line-height: 1.6;
-      text-align: justify;
-    }
+  .countdown {
+    background: #2b2b3d;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #ff82b2;
+  }
 
-    .message span {
-      display: block;
-      margin-bottom: 8px;
-    }
-  </style>
+  .message {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .message span {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <div class="carousel" id="carousel">
-      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20251003_175300.jpg" class="active" alt="Foto 1">
-      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20251003_175217.jpg" alt="Foto 2">
-      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171914.png" alt="Foto 3">
-      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171902.png" alt="Foto 4">
-      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171335.jpg" alt="Foto 5">
-      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/525362340_1516710352832761_7353236145171460550_n.png" alt="Foto 6">
-      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/IMG-20250820-WA0000.jpg" alt="Foto 7">
-      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/IMG-20250820-WA0002.jpg" alt="Foto 8">
-    </div>
+<div class="card">
+  <div class="carousel" id="carousel">
+    <!-- Fundo borrado e foto principal -->
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20251003_175300.jpg" class="bg active">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20251003_175300.jpg" class="main active">
 
-    <h1>Parabéns minha Princesa</h1>
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20251003_175217.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20251003_175217.jpg" class="main">
 
-    <div class="countdown" id="countdown">
-      Carregando tempo...
-    </div>
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171914.png" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171914.png" class="main">
 
-    <div class="message">
-      🎉👑 Está chegando o seu aniversário, minha Princesa! 💖  
-      <span>Me desculpa por não estar aí com você 😔, mas você sabe o quanto eu queria estar ao seu lado, meu Amor. ❤️</span>  
-      <span>Eu te amo tanto e desejo que o seu dia seja perfeito e cheio de alegria 🥳🥰</span>  
-      🎁 Eu queria te dar um presente lindo, mas como você disse que não quer, este ano não vou mandar nada... 😘💌  
-      <span>Mas no próximo ano te espera uma surpresa especial 🌹💎</span>  
-      <span>Bjs, minha Princesa 💕 meu Amorzinho 😍💋</span>
-    </div>
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171902.png" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171902.png" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171335.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171335.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/525362340_1516710352832761_7353236145171460550_n.png" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/525362340_1516710352832761_7353236145171460550_n.png" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/IMG-20250820-WA0000.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/IMG-20250820-WA0000.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/IMG-20250820-WA0002.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/IMG-20250820-WA0002.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/PSX_20250805_121814.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/PSX_20250805_121814.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250729_102344_Chrome~3.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250729_102344_Chrome~3.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250731_012511_Instagram.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250731_012511_Instagram.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250805_150949_Instagram.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250805_150949_Instagram.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250805_150955_Instagram.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250805_150955_Instagram.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250927_010556_Instagram.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250927_010556_Instagram.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250927_185932_Instagram.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250927_185932_Instagram.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250929_230138_Instagram.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250929_230138_Instagram.jpg" class="main">
+
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250929_170855_One%20UI%20Home.jpg" class="bg">
+    <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/Screenshot_20250929_170855_One%20UI%20Home.jpg" class="main">
   </div>
 
-  <script>
-    // Carrossel automático
-    const images = document.querySelectorAll("#carousel img");
-    let current = 0;
+  <h1>Parabéns minha Princesa</h1>
 
-    function showNextImage() {
-      images[current].classList.remove("active");
-      current = (current + 1) % images.length;
-      images[current].classList.add("active");
-    }
+  <div class="countdown" id="countdown">Carregando tempo...</div>
 
-    setInterval(showNextImage, 3000); // troca a cada 3s
+  <div class="message">
+    🎉👑 Está chegando o seu aniversário, minha Princesa! 💖  
+    <span>Me desculpa por não estar aí com você 😔, mas você sabe o quanto eu queria estar ao seu lado, meu Amor. ❤️</span>  
+    <span>Eu te amo tanto e desejo que o seu dia seja perfeito e cheio de alegria 🥳🥰</span>  
+    🎁 Eu queria te dar um presente lindo, mas como você disse que não quer, este ano não vou mandar nada... 😘💌  
+    <span>Mas no próximo ano te espera uma surpresa especial 🌹💎</span>  
+    <span>Bjs, minha Princesa 💕 meu Amorzinho 😍💋</span>
+  </div>
+</div>
 
-    // Contagem regressiva
-    const targetDate = new Date("December 10, 2025 00:00:00").getTime();
+<script>
+const bgImages = document.querySelectorAll("#carousel .bg");
+const mainImages = document.querySelectorAll("#carousel .main");
+let current = 0;
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+function showNextImage() {
+  bgImages[current].classList.remove("active");
+  mainImages[current].classList.remove("active");
 
-      if (distance <= 0) {
-        document.getElementById("countdown").innerHTML = "🎂 Feliz aniversário, Princesa! 🎉";
-        return;
-      }
+  current = (current + 1) % mainImages.length;
 
-      const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
-      const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  bgImages[current].classList.add("active");
+  mainImages[current].classList.add("active");
+}
 
-      document.getElementById("countdown").innerHTML =
-        `${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
-    }
+setInterval(showNextImage, 3000);
 
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
+// Contagem regressiva
+const targetDate = new Date("December 10, 2025 00:00:00").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  if (distance <= 0) {
+    document.getElementById("countdown").innerHTML = "🎂 Feliz aniversário, Princesa! 🎉";
+    return;
+  }
+
+  const months = Math.floor(distance / (1000*60*60*24*30));
+  const days = Math.floor((distance % (1000*60*60*24*30)) / (1000*60*60*24));
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    `${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
 </body>
 </html>
