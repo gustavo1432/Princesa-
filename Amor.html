@@ -14,17 +14,17 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 20px;
     }
 
     .card {
       background: #1c1c2b;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      max-width: 400px;
-      width: 90%;
+      max-width: 500px;
+      width: 100%;
       padding: 20px;
       text-align: center;
-      overflow: hidden;
     }
 
     .carousel {
@@ -39,7 +39,7 @@
     .carousel img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* mantém proporção sem esticar */
+      object-fit: cover; /* não estica a foto */
       border-radius: 15px;
       position: absolute;
       top: 0;
@@ -68,20 +68,20 @@
 
     .message {
       font-size: 14px;
-      line-height: 1.5;
+      line-height: 1.6;
       text-align: justify;
     }
 
     .message span {
-      display: inline-block;
-      margin-bottom: 5px;
+      display: block;
+      margin-bottom: 8px;
     }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="carousel" id="carousel">
-      <img src="https://github.com/gustavo1432/Princesa-/blob/main/20251003_175300.jpg" class="active" alt="Foto 1">
+      <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20251003_175300.jpg" class="active" alt="Foto 1">
       <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20251003_175217.jpg" alt="Foto 2">
       <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171914.png" alt="Foto 3">
       <img src="https://raw.githubusercontent.com/gustavo1432/Princesa-/main/20250805_171902.png" alt="Foto 4">
